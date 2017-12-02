@@ -35,9 +35,6 @@
                  echo $found_user->username;
 
 
-                 $pictures = new Picture();
-
-
              ?>
 
 

@@ -9,6 +9,8 @@ $the_path = "includes/{$class}.php";
 
 if(is_file($the_path) && !class_exists($class)){
 	include $the_path;
+}else{
+	echo "{$class}.php not found";
 }
 
 
@@ -17,7 +19,9 @@ if(is_file($the_path) && !class_exists($class)){
 spl_autoload_register('classAutoLoader');
 
 
-
+function redirect($location){
+	header("Location: {$location}");
+}
 
 
 
