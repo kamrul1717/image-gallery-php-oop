@@ -101,9 +101,11 @@ private function has_the_attribute($the_attribute){
 
 	return array_key_exists($the_attribute, $object_properties);
 
+}
 
 
-
+protected function properties(){
+	return get_object_vars($this);
 }
 
 
@@ -115,12 +117,11 @@ public function save(){
 
 public function create(){
 	global $database;
-	$sql = "INSERT INTO " . self::$db_table . " (username, password, first_name, last_name)";
-	$sql .= "VALUES ('";
-	$sql .= $database->escape_string($this->username) . "', '";
-	$sql .= $database->escape_string($this->password) . "', '";
-	$sql .= $database->escape_string($this->first_name) . "', '";
-	$sql .= $database->escape_string($this->last_name) . "')";
+
+	$properties = $this->properties();
+
+	$sql = "INSERT INTO " . self::$db_table . "(" . implode(",", array_keys($properties)) . ")";
+	$sql .= "VALUES ('" . implode("','", array_values($properties)) . "')";
 
 	if($database->query($sql)){
 
