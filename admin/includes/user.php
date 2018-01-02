@@ -111,7 +111,7 @@ protected function properties(){
 
 	foreach (self::$db_table_fields as $db_field) {
 		if(property_exists($this, $db_field)){
-			$properties['$db_field'] = $this->db_field;
+			$properties[$db_field] = $this->$db_field;
 		}
 	}
 	return $properties;
