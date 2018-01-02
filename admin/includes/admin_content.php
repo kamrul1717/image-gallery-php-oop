@@ -12,20 +12,23 @@
 
             <?php 
 
-            $user = new User();
+            // $user = new User();
 
-            $user->username = "Suave The Second";
-            $user->password = "Rico Last Name";
-            $user->first_name = "Rica";
-            $user->last_name = "Suaves";
+            // $user->username = "Suave The Second";
+            // $user->password = "Rico Last Name";
+            // $user->first_name = "Rica";
+            // $user->last_name = "Suaves";
 
-            $user->create();
+            // $user->create();
 
 
-            // $user = User::find_user_by_id(7);
-            // $user->username = "WILLIAMS";
+            $user = User::find_user_by_id(7);
+            $user->username = "WILLIAMSom";
+            $user->password = "david45";
+            $user->first_name = "david";
+            $user->last_name = "rob";
 
-            // $user->update();
+            $user->update();
 
 
             // $user = User::find_user_by_id(6);
