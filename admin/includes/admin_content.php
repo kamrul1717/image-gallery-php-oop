@@ -22,14 +22,24 @@
             // $user->create();
 
 
-            // $user = User::find_user_by_id(3);
-            // $user->last_name = "WILLIAMS";
+            $user = User::find_user_by_id(7);
+            $user->username = "WILLIAMS";
 
-            // $user->update();
+            $user->update();
 
 
-            $user = User::find_user_by_id(5);
-            $user->delete();
+            // $user = User::find_user_by_id(6);
+            // $user->delete();
+
+            // $user = User::find_user_by_id(6);
+            // $user->password = "justpassword";
+
+            // $user->save();
+
+            // $user = new User();
+            // $user->username = "SUAVE";
+            // $user->save();
+
 
              ?>
 
